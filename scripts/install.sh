@@ -16,5 +16,5 @@ cd /tmp
 tar -xvzf $TOMCAT_DIR.tar.gz
 
 # Move to /opt
-sudo mv $TOMCAT_DIR $INSTALL_DIR/tomcat
+sudo mv $TOMCAT_DIR $INSTALL_DIR/tomcat/
 #sudo systemctl enable tomcat.service
