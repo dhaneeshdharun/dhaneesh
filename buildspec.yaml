@@ -23,6 +23,6 @@ phases:
 artifacts:
   files:
       - target/dhaneeshdharun.war
-      - appspec.yaml
+      - appspec.yml
       - scripts/*
   discard-paths: no
