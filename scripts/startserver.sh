@@ -5,7 +5,7 @@
 # Start and enable Tomcat
 
 
-sudo systemctl start tomcat.service
+sudo systemctl start tomcat9.service
 
 # Start and enable Apache HTTPD
 #sudo systemctl enable httpd.service
