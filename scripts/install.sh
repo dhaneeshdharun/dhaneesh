@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo yum -y install tomcat
-sudo yum -y install httpd
+sudo yum install -y tomcat  
+sudo yum install -y httpd
