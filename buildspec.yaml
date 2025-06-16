@@ -3,6 +3,8 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+    commands:
+      - echo "Installing Java Corretto 11"
   pre_build:
     commands:
       - echo "installing the dependencies from the maven main stream and store it in codeartifact repo and use it for code build"
