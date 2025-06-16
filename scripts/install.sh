@@ -6,8 +6,9 @@ TOMCAT_VERSION=9.0.34
 TOMCAT_DIR=apache-tomcat-$TOMCAT_VERSION
 INSTALL_DIR=/opt
 echo "installing java "
+sudo yum update -y
+sudo yum install java-21-amazon-corretto -y
 
-sudo yum install java-11-openjdk-devel -y
 
 echo "=== [install.sh] Installing Tomcat $TOMCAT_VERSION ===" >> "$LOG_FILE"
 
