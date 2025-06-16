@@ -14,7 +14,7 @@ phases:
       - mvn -s settings.xml clean
       - echo "compileing the code" 
       - mvn -s settings.xml compile
-  postbuild:
+  post_build:
     commands:
       - echo "packaging the code and no errors"
       - mvn -s settings.xml package
