@@ -1,15 +1,10 @@
 #!/bin/bash
- # Exit immediately on any error
+set -e
 
+LOG_FILE="/tmp/deploy.log"
 
-# Start and enable Tomcat
+echo "=== [startserver.sh] Starting Tomcat service ===" >> "$LOG_FILE"
 
+sudo systemctl start tomcat.service
 
-sudo systemctl start tomcat9.service
-
-# Start and enable Apache HTTPD
-#sudo systemctl enable httpd.service
-#udo systemctl start httpd.service
-
-echo "=== [startserver.sh] Services started successfully ===" >> /tmp/deploy.log
-
+echo "=== [startserver.sh] Tomcat started ===" >> "$LOG_FILE"
