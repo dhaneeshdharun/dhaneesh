@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /target/dhaneeshdharun.war
-    destination: /opt/tomcat/webapps/
+    destination: /opt/webapps/
     overwrite: true
 
 hooks:
