@@ -5,6 +5,9 @@ LOG_FILE="/tmp/deploy.log"
 TOMCAT_VERSION=9.0.34
 TOMCAT_DIR=apache-tomcat-$TOMCAT_VERSION
 INSTALL_DIR=/opt
+echo "installing java "
+sudo apt update
+sudo yum install java-11-openjdk-devel -y
 
 echo "=== [install.sh] Installing Tomcat $TOMCAT_VERSION ===" >> "$LOG_FILE"
 
