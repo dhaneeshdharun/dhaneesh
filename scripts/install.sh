@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo yum install -y tomcat9  
-sudo yum install -y httpd
+sudo yum install -y tomcat9
+sudo systemctl enable tomcat.service
