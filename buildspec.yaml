@@ -1,28 +1,26 @@
 version: 0.2
 phases:
   install:
-    runtime-versions:
-      java: corretto11
-    commands:
-      - echo "Installing Java Corretto 11"
-  pre_build:
-    commands:
-      - echo "installing the dependencies from the maven main stream and store it in codeartifact repo and use it for code build"
-      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain dhaneesh-domain --domain-owner 494713367427 --region ap-northeast-1 --query authorizationToken --output text`
-
+     runtime-versions:
+        java: corretto11
+        maven: apache-maven-3.9.9
+  prebuild:
+     commands:
+       - echo "Logging in to Amazon ECR.."
+       - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 494713367427.dkr.ecr.eu-north-1.amazonaws.com
   build:
-    commands:
-      - echo "codebuild starts"  
-      - mvn -s settings.xml clean
-      - echo "compileing the code" 
-      - mvn -s settings.xml compile
+     commands:
+       - echo "clean the mvn repo"
+       - mvn clean
+       - echo "code build begin"
+       - mvn compile package
+       - echo "build a docker image"
+       - docker build -t dhaneesh/dha:latest .
   post_build:
-    commands:
-      - echo "packaging the code and no errors"
-      - mvn -s settings.xml package
-artifacts:
-  files:
-      - target/dhaneeshdharun.war
-      - appspec.yml
-      - scripts/*
-  discard-paths: no
+     commands:
+       - echo "pushing the image to aws ECR"
+       - docker tag  dhaneesh/dha:latest 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:latest
+       - docker push 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:latest
+
+       
+      
