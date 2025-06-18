@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: dhaneesh-deployment
+   labels:
+     app: first-project
+     type: webapp
+
+spec:
+   template:
+     metadata:
+       name: dhaneesh-pod
+       labels:
+         app: podding
+         type: webapp
+     spec:
+       containers:
+         - name: dhaneesh-container
+           image: dhaneeshdharun/dharun:v2
+   replicas: 3
+   selector:
+       matchLabels:
+         app: podding
+         type: webapp

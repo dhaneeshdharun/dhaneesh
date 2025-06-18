@@ -4,8 +4,8 @@ FROM tomcat:latest
 ENV CATALINA_HOME=/usr/local/tomcat
 ENV PATH=$CATALINA_HOME/bin:$PATH
 # Install unzip
-USER root
-RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
+#USER root
+#RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
 
 
 WORKDIR $CATALINA_HOME/webapps
