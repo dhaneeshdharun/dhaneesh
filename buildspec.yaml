@@ -4,7 +4,7 @@ phases:
      runtime-versions:
         java: corretto11
         maven: apache-maven-3.9.9
-  prebuild:
+  pre_build:
      commands:
        - echo "Logging in to Amazon ECR.."
        - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 494713367427.dkr.ecr.eu-north-1.amazonaws.com
