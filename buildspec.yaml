@@ -3,7 +3,7 @@ phases:
   install:
      runtime-versions:
         java: corretto11
-        maven: apache-maven-3.9.9
+      #  maven: apache-maven-3.9.9
   pre_build:
      commands:
        - echo "Logging in to Amazon ECR.."
