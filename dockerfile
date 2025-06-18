@@ -1,4 +1,4 @@
-FROM tomcat:latest
+FROM tomcat:9-jdk8-corretto
 #env variables
 
 ENV CATALINA_HOME=/usr/local/tomcat
