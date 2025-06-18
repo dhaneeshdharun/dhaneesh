@@ -19,8 +19,7 @@ phases:
   post_build:
      commands:
        - echo "pushing the image to aws ECR"
-       - docker tag  dhaneesh/dha:latest 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:latest
-       - docker push 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:latest
-
+       - docker tag  dhaneesh/dha:latest 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:first
+       - docker push 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:first
        
       
