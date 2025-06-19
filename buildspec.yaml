@@ -7,11 +7,10 @@ phases:
   pre_build:
      commands:
        - echo "installing the kubectl "
-   #    - curl -o kubectl https://amazon-eks.s3.eu-north-1.amazonaws.com/1.27.6/2023-05-17/bin/linux/amd64/kubectl
-    #   - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.27.6/2023-05-17/bin/linux/amd64/kubectl
-     #  - chmod +x ./kubectl
-      # - mv ./kubectl /usr/local/bin/kubectl
-       #- kubectl version
+       - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.27.6/2023-05-17/bin/linux/amd64/kubectl
+       - chmod +x kubectl
+       - mv kubectl /usr/local/bin/kubectl
+       - kubectl version --client
        - echo "Logging in to Amazon ECR.."
        - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 494713367427.dkr.ecr.eu-north-1.amazonaws.com
   build:
