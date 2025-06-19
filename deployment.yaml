@@ -16,8 +16,8 @@ spec:
      spec:
        containers:
          - name: dhaneesh-container
-           image: dhaneeshdharun/dharun:v2
-   replicas: 3
+           image: 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:first
+   replicas: 2
    selector:
        matchLabels:
          app: podding
