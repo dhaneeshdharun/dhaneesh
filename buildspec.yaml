@@ -29,8 +29,8 @@ phases:
        - echo login into eks cluster
        - aws eks --region eu-north-1 update-kubeconfig --name dhaneesh-ekscluster 
        - echo "deploying it in ekscluster"
-       - kubectl apply -f deployment.yaml --validate=false
-       - kubectl apply -f service.yaml --validate=false
+       - kubectl apply -f deployment.yaml 
+       - kubectl apply -f service.yaml 
        - kubectl rollout status deployment/dhaneesh-deployment
        
       
