@@ -28,7 +28,7 @@ phases:
        - docker tag  dhaneesh/dha:latest 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:first
        - docker push 494713367427.dkr.ecr.eu-north-1.amazonaws.com/dhaneesh/dharun:first
        - echo login into eks cluster
-       - aws eks --region eu-north-1 update-kubeconfig --name your-dhaneesh-ekscluster
+       - aws eks --region eu-north-1 update-kubeconfig --name dhaneesh-ekscluster
        - echo "deploying it in ekscluster"
        - kubectl apply -f deployment.yaml
        - kubectl apply -f service.yaml
